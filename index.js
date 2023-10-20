@@ -17,11 +17,12 @@ let alertCVV = document.querySelector(".alert-date-cvv");
 
 function renderOutput(formObject) {
   const { name, cardNumber, month, year, cvv } = formObject;
+  let formattedNumber = cardNumber.match(/\d{1,4}/g).join(" ");
 
-  name ? (cardNameOutput.textContent = name) : null;
-  cardNumber ? (cardNumberOutput.textContent = cardNumber) : null;
-  month || year ? (cardExpDate.textContent = `${month} / ${year}`) : null;
-  cvv ? (cardCvv.textContent = cvv) : null;
+  cardNameOutput.textContent = name;
+  cardNumberOutput.textContent = formattedNumber;
+  cardExpDate.textContent = `${month} / ${year}`;
+  cardCvv.textContent = cvv;
 }
 
 function thankYouPage() {
@@ -33,15 +34,10 @@ function formValidator(formObject, formValues) {
   let isValid = true;
   const { name, cardNumber, month, year, cvv } = formObject;
   const currentYear = new Date().getFullYear().toString().substring(2);
+  let isNameNumber = name.match(/[0-9]/g);
 
-  if (formValues.includes("")) {
-    alertName.textContent = "please enter name";
-    alertCardNumber.textContent = "please enter card number";
-    alertExpDate.textContent = "please enter expire date";
-    isValid = false;
-  }
-  if (!name || Number(name)) {
-    alertName.textContent = "please enter name";
+  if (!name || Number(isNameNumber)) {
+    alertName.textContent = "please enter valid name";
     alertName.classList.remove("hidden");
     isValid = false;
   } else {
@@ -72,7 +68,7 @@ function formValidator(formObject, formValues) {
     alertExpYY.classList.add("hidden");
   }
   if (!cvv || cvv.length > 3) {
-    alertCVV.textContent = "please enter valid cvv";
+    alertCVV.textContent = "please enter valid CVV";
     alertCVV.classList.remove("hidden");
     isValid = false;
   } else {
