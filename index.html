@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Interactive card details form" />
+    <meta name="description" content="card registration form" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="img-container">
+          <img src="images/bg-main-desktop.png" alt="purple background" />
+          <div class="form-container">
+            <div class="cards-container">
+              <div class="card-front">
+                <div class="logo-container">
+                  <img src="images/card-logo.svg" alt="front card logo" />
+                </div>
+                <div class="card-text-container">
+                  <p id="cardNumberOutput">0000 0000 0000 0000</p>
+                  <div class="card-holder">
+                    <small id="cardName">Jane Appleseed</small>
+                    <small id="cardDate">00/00</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-back">
+                <small id="cardCvv">000</small>
+              </div>
+            </div>
+
+            <form class="hidden form-container" id="form">
+              <label for="name">cardholder name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="e.g. Jane Appleseed"
+              />
+              <small class="hidden alert-name"
+                >Wrong format, numbers only</small
+              >
+              <label for="cardNumber">card number</label>
+              <input
+                type="number"
+                name="cardNumber"
+                id="_cardNumber"
+                placeholder="e.g 1234 5678 9012 0000"
+              />
+              <small class="hidden alert-card"
+                >Wrong format, numbers only</small
+              >
+              <div class="number-inputs">
+                <div>
+                  <label for="month">exp. date (mm/yy)</label>
+                  <div class="exp-date-container">
+                    <input
+                      type="number"
+                      placeholder="MM"
+                      name="month"
+                      id="exp_mm"
+                      size="4"
+                    />
+                    <small class="hidden alert-date-mm">Can't be blank</small>
+                    <input
+                      type="number"
+                      placeholder="YY"
+                      name="year"
+                      id="exp_yy"
+                      size="4"
+                    />
+                    <small class="hidden alert-date-yy">Can't be blank</small>
+                  </div>
+                </div>
+                <div class="cvv-container">
+                  <label for="cvv">CVC</label>
+                  <input
+                    id="cvvNumber"
+                    type="number"
+                    placeholder="e.g. 123"
+                    name="cvv"
+                  />
+                  <small class="hidden alert-date-cvv"
+                    >Wrong format, numbers only</small
+                  >
+                </div>
+              </div>
+              <div>
+                <button type="submit" class="btn">Confirm</button>
+              </div>
+            </form>
+            <div class="thank-container">
+              <picture>
+                <source src="images/icon-complete.svg" type="image/svg" />
+                <img
+                  src="images/icon-complete.svg"
+                  alt="tick icon complete"
+                  width="50px"
+                  height="150px"
+                />
+              </picture>
+              <article>
+                <h1>THANK YOU!</h1>
+                <p>We've added your card details</p>
+              </article>
+              <div><button class="btn">Continue</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="index.js"></script>
+    </main>
+  </body>
+</html>
