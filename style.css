@@ -78,7 +78,7 @@ label {
   color: hsl(0, 0%, 100%);
   padding-top: 3rem;
 }
-.card-text-container p {
+.card-text-container h1 {
   letter-spacing: 1.2px;
   margin: 0;
   font-size: 1.8rem;
