@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge; chrome=1" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge; chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Interactive card details form" />
     <meta name="description" content="card registration form" />
@@ -49,6 +49,7 @@
             <form class="form-container" id="form">
               <label for="name">cardholder name</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 placeholder="e.g. Jane Appleseed"
@@ -58,6 +59,7 @@
               >
               <label for="cardNumber">card number</label>
               <input
+                id="cardNumber"
                 type="number"
                 name="cardNumber"
                 id="_cardNumber"
@@ -68,7 +70,7 @@
               >
               <div class="number-inputs">
                 <div>
-                  <label for="month">exp. date (mm/yy)</label>
+                  <label for="exp_mm">exp. date (mm/yy)</label>
                   <div class="exp-date-container">
                     <input
                       type="number"
@@ -89,7 +91,7 @@
                   </div>
                 </div>
                 <div class="cvv-container">
-                  <label for="cvv">CVC</label>
+                  <label for="cvvNumber">CVC</label>
                   <input
                     id="cvvNumber"
                     type="number"
@@ -107,16 +109,10 @@
             </form>
             <div class="hidden thank-container">
               <picture>
-                <source src="images/icon-complete.svg" type="image/svg" />
-                <img
-                  src="images/icon-complete.svg"
-                  alt="tick icon complete"
-                  width="50px"
-                  height="150px"
-                />
+                <img src="images/icon-complete.svg" alt="tick icon complete" />
               </picture>
               <article>
-                <h1>THANK YOU!</h1>
+                <h3>THANK YOU!</h3>
                 <p>We've added your card details</p>
               </article>
               <div><button id="continue-btn" class="btn">Continue</button></div>
